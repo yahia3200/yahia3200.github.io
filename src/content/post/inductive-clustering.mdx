@@ -8,12 +8,13 @@ tags:
   - Inductive Clustering
   - Clustering Generalization
 metadata:
-  canonical: https://astrowind.vercel.app/astrowind-template-in-depth
+  canonical: https://yahia3200.github.io/blog/inductive-clustering/
 ---
 
 import DListItem from '~/components/ui/DListItem.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
 import Latex from '~/components/Latex.astro';
+import Image from '~/components/common/Image.astro';
 import { findImage } from '~/utils/images.ts';
 
 ## Introduction
@@ -68,7 +69,10 @@ Another essential benefit for our use case is that we can train the classifier u
 The choice of the classification algorithm will influence the properties of generated clustering regions. As we cannot determine how the clustering regions will fill all the input space from the input data, a proper understanding of both the decision boundaries generated from different algorithms and the nature of the problem you are trying to solve are essential for choosing the best algorithm for the problem.
 
 <div align="center">
-  <img src="/src/assets/images/blog/inductive_clustering/clfs-4.jpg" />
+  <Image
+    src="~/assets/images/blog/inductive_clustering/clfs-4.jpg"
+    alt="decision boundaries between different algorithms"
+  />
   <p style="font-size: 15px;">A comparison of decision boundaries between different algorithms source: scikit-learn</p>
 </div>
 
@@ -77,7 +81,7 @@ The choice of the classification algorithm will influence the properties of gene
 ### Looking at the data
 
 <div align="center">
-  <img src="/src/assets/images/blog/inductive_clustering/table2-1.jpeg" />
+  <Image src="~/assets/images/blog/inductive_clustering/table2-1.jpeg" alt="Head od the Dataframe" />
   <p style="font-size: 15px;">Head od the Dataframe</p>
 </div>
 
@@ -98,7 +102,8 @@ As we mentioned earlier, we will only use Latitude and Longitude features to tra
 Before training our classifier, we need to know the amount of lost information by using only the location features. We can discern it by showing the overlap between clusters when projected onto the lat-long 2D plane.
 
 <div align="center">
-  <img src="/src/assets/images/blog/inductive_clustering/2d_3_25.jpg" />
+
+  <Image src="~/assets/images/blog/inductive_clustering/2d_3_25.jpg" alt="Clusters projected onto 2D space" width="600"/>
   <p style="font-size: 15px;">Clusters projected onto 2D space</p>
 </div>
 
@@ -176,7 +181,10 @@ plt.show()
 ```
 
 <div align="center">
-  <img src="/src/assets/images/blog/inductive_clustering/compare-1.jpg" />
+  <Image
+    src="~/assets/images/blog/inductive_clustering/compare-1.jpg"
+    alt="Comparison between boundaries generated from RF vs KNN"
+  />
   <p style="font-size: 15px;">Comparison between boundaries generated from RF vs KNN </p>
 </div>
 
