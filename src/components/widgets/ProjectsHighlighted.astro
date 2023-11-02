@@ -1,0 +1,35 @@
+---
+import Image from '~/components/common/Image.astro';
+
+import image from '~/assets/images/me.jpeg';
+---
+
+<div
+  class="projects"
+  style={{
+    display: 'flex',
+  }}
+>
+  <div
+    class="project-card"
+    style={{
+      display: 'flex',
+      width: '400px',
+    }}
+  >
+    <Image
+      class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"
+      layout="fixed"
+      width={400}
+      height={400}
+      src={image}
+      alt={'Project Image'}
+    />
+    <div class="project-details px-6 py-4">
+      <div class="project-title font-semibold text-xl mb-2">Project 1</div>
+      <p class="project-description text-gray-700 text-base">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, molestiae.
+      </p>
+    </div>
+  </div>
+</div>

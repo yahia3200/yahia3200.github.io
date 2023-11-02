@@ -1,0 +1,261 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+
+// Data
+import { personalLinks, resumeData, educationData, skillsData } from '~/data/home.ts';
+
+import image from '~/assets/images/me.jpeg';
+
+const metadata = {
+  title: 'Home',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: '#' },
+        { text: 'About', href: '#about' },
+        { text: 'Resume', href: '#resume' },
+        { text: 'Portfolio', href: '#portfolio' },
+        { text: 'Blog', href: '#blog' },
+        { text: 'Github', href: 'https://github.com/yahia3200', target: '_blank' },
+      ]}
+      actions={[
+        {
+          text: 'Contact Me',
+          href: 'https://www.linkedin.com/in/yahia-zakaria-9a75581b0/',
+          target: '_blank',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero
+    id="hero"
+    title="Yahia Zakaria"
+    tagline="Welcome to my portoflio"
+    actions={[
+      {
+        variant: 'primary',
+        target: '_blank',
+        text: 'Contact Me',
+        href: 'https://www.linkedin.com/in/yahia-zakaria-9a75581b0/',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      I'm a Data Scientist and a Machine Learning Engineer <br /> I have a degree in Computer Engineering from Cairo
+      University and a Software Engineering background, especially front-end development. I love everything that has to
+      do with computer science, programming, and machine learning.
+    </Fragment>
+  </Hero>
+
+  <!-- Personal Info Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={personalLinks}
+    image={{
+      src: image,
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h3>
+      <p>
+        During my studies, I had three internships as a Data scientist and a Machine Learning Researcher, In which I
+        honed my skills in developing innovative solutions for various domains, including automotive, transportation,
+        and energy industries.
+      </p>
+      <br />
+      <p>
+        I also got selected twice for The Google Summer of Code program, where I contributed to the open-source
+        community. I gained much experience by working on ongoing projects that deliver real-world value.
+      </p>
+      <br />
+      <p>If you're curious to dive deeper into my work, you can follow me:</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps id="resume" title="Work experience" items={resumeData} classes={{ container: 'max-w-3xl' }} />
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps id="resume" title="Education" items={educationData} classes={{ container: 'max-w-3xl' }} />
+
+  <!-- Features3 Widget ************** -->
+
+  <Features3
+    title="Skills"
+    subtitle="Discover the proficiencies that allow me to bring imagination to life through design."
+    columns={3}
+    defaultIcon="tabler:point-filled"
+    items={skillsData}
+  />
+
+  <!-- first project **************** -->
+
+  <Content
+    id="portfolio"
+    title="Highlighted Projects"
+    isReversed
+    isAfterContent={true}
+    addIcon={false}
+    headerCallToAction={{
+      text: 'View all projects',
+      icon: 'tabler:chevron-right',
+      href: '/portfolio',
+    }}
+    items={[
+      {
+        title: 'Description:',
+        description: `Reaching and Building a complete perception system that is capable of detecting, tracking, and predicting themotion of other vehicles on the road To be used in Autonomous cars  <br /><br />
+         Doing an extensive literature review for already existing motion prediction techniques. <br /> <br />
+         Provide accurate predictions for the future trajectories of the surrounding vehicles on The NuScences datasetwhile maintaining 15-FPS speed. <br /> <br />
+         Utilizing the transformer architecture to build encoders for captioning both the spatial interactions between
+agents and the temporal interactions between historical trajectories of agents`,
+        icon: 'tabler:file-description',
+      },
+      {
+        title: `technologies used:`,
+        description: `Python, Pytorch, Linux, Git`,
+        icon: 'tabler:source-code',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/home/track_ego.png',
+      alt: 'Art and Music Poster Image',
+      aspectRatio: '4/3',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: 'https://github.com/TrackEgo',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Tracking and Motion Prediction for Autonomous Vehicles<br /><span class="text-2xl"
+          >Graduation Thesis - Artificial Intelligence</span
+        >
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    items={[
+      {
+        title: 'Description:',
+        description: `A customizable social media platform mimiking tumblr which enables users to: post, follow blogs, chat with them and more. <br/><br/>
+        In Dashboard, you can follow recommended blogs on the sidebar, see a featured post, create posts from the top panel or simply scroll through the latest posts from your followed blogs. Just once you reach the last post, more posts are loaded for you to see`,
+        icon: 'tabler:file-description',
+      },
+      {
+        title: `technologies used:`,
+        description: `React, Sass, Jest, Docker, Git, HTML, CSS, JavaScript`,
+        icon: 'tabler:source-code',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/home/cmplr.gif',
+      alt: 'Tech Design Image',
+      aspectRatio: '16/9',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: 'https://github.com/CMPLR-Technologies/CMPLR-Frontend',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Cmplr <br /><span class="text-2xl">Web development - Frontend</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <Content
+    isReversed
+    items={[
+      {
+        title: 'Description:',
+        description: `An autonomous rover with main objective is to do rescue operations, discover dangerous areas. <br/><br/>
+        Main Implemented Features: <br/>
+        - Using a robotic arm to pick up objects <br/>
+        - Controlled remotely using a mobile application <br/>
+        - Sense the environment using different sensors and send the data to the mobile application <br/>
+        - Object detection and classification using a camera <br/>`,
+        icon: 'tabler:file-description',
+      },
+      {
+        title: `technologies used:`,
+        description: `Python, C++, ROS, Tensorflow, Linux, Flutter, Git`,
+        icon: 'tabler:source-code',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/projects/home/rover.gif',
+      alt: 'Tech Design Image',
+      aspectRatio: '16/9',
+    }}
+    callToAction={{
+      target: '_blank',
+      text: 'Go to the project',
+      icon: 'tabler:chevron-right',
+      href: 'https://github.com/CMP-Rover/CMP-Rover',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        CMP Rover <br /><span class="text-2xl">Engineering - Robotics</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- BlogLatestPost Widget **************** -->
+
+  <BlogLatestPosts
+    id="blog"
+    title="Explore my insightful articles on my blog"
+    information={`Dive into a realm of design wisdom and creative inspiration, where you'll find invaluable insights, practical tips, and captivating narratives that elevate and enrich your creative journey.`}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </BlogLatestPosts>
+</Layout>

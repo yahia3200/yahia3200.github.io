@@ -1,0 +1,42 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Headline from '~/components/blog/Headline.astro';
+import ProjectCard from '~/components/widgets/ProjectCard.astro';
+
+import { projects } from '~/data/projects';
+
+const metadata = {
+  title: 'Portfolio',
+};
+---
+
+<style>
+  .projects-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+  }
+  .projects {
+    display: flex;
+    justify-content: center;
+    max-width: 1600px;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+</style>
+
+<Layout metadata={metadata}>
+  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4x">
+    <Headline
+      subtitle="A collection of my projects and experiments in different fields of software development and computer engineering."
+    >
+      Portfolio
+    </Headline>
+    <div class="projects-wrapper">
+      <div class="projects">
+        {projects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </div>
+  </section>
+</Layout>
