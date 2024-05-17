@@ -3,7 +3,7 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "baseUrl": "/home/yahia/Desktop/Projects/portfolio",
+    "baseUrl": "D:\\Projects\\yahia3200.github.io",
     "paths": {
       "~/*": [
         "src/*"

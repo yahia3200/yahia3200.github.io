@@ -57,10 +57,19 @@ const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
   ]}
   {...id ? { id } : {}}
 >
-  <div class="absolute inset-0"></div>
+  <div class="absolute inset-0">
+    <div class="dark:bg-[#1a1a1a] bg-white flex justify-center items-center text-sm py-1">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Flag_of_Palestine_-_short_triangle.svg/432px-Flag_of_Palestine_-_short_triangle.svg.png"
+        alt=""
+        height="20px"
+        class="inline-block mr-2 h-3"
+      /> Stand with Palastine</div>
+  </div>
+  
   <div
     class:list={[
-      'relative text-default py-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between',
+      'relative text-default pt-6 pb-3 px-3 md:px-6 mx-auto w-full md:flex md:justify-between',
       {
         'max-w-7xl': !isFullWidth,
       },
