@@ -28,9 +28,30 @@ const personalLinks = [
 const resumeData = [
   {
     title:
+      'CAD Software Engineer <br /> <span class="font-normal">PULSAR Microelectronics, Cairo, Egypt</span> <br /> <span class="text-sm font-normal">February 2024 – Current</span>',
+    description: `
+    - Contributed to the main program codebase, focusing on fixing bugs, refactoring, and improving the overall code architecture. <br />
+    - Designed and Implemented a highly interactive visualization tool for visualizing the different types of electronic simulations (AC, DC, etc ...) with different
+     functionalities including adding markers, drawing horizontal and vertical lines on plots with intersections calculations, and customize plot appearances. <br />`,
+    icon: 'tabler:briefcase',
+  },
+  {
+    title:
+      'Frontend Engineer <br /> <span class="font-normal">NXT Gen, Cairo, Egypt</span> <br /> <span class="text-sm font-normal">November 2023 – Current</span>',
+    description: `
+    <a href="https://dp.tackleandtalk.com/" target="_blank" class="text-cyan-600 font-bold">Tackle and Talk</a> <span class="text-sm">Angular</span> <br />
+    - Built complex UI components for handling booking sessions and providers’ availability with different time zones. <br />
+    - Maintaining and refactoring major parts in the application such as Auth pages and dashboards. <br /> 
+    <a href="http://superfitai.com/" target="_blank" class="text-cyan-600 font-bold">SuperFit</a> <span class="text-sm">Nextjs</span> <br />
+    - Implemented the main landing page for website with focus on responsive design and performance with nearly perfect lighthouse scores.<br />
+    - Implemented user authentication with Authjs and Integrated payment flow with backend. <br />`,
+    icon: 'tabler:briefcase',
+  },
+  {
+    title:
       'Data Science Intern <br /> <span class="font-normal">Synapse Analytics, Cairo, Egypt</span> <br /> <span class="text-sm font-normal">June 2023 – September 2023</span>',
     description: `- Developed and implemented a machine learning model for cost prediction in transportation and logistics,
-achieving an average mean percentage error of less than 20 percent. <br /> - Showcased proficiency in the complete machine learning life-cycle, starting from data cleaning and feature selection, and progressing through model development and deployment using Docker and FastAPI <br /> - Utilized MLFlow for managing multiple experiment versions, allowing for easy comparisons between different iterations of the machine learning model.`,
+achieving an average mean percentage error of less than 20 percent. <br /> - Showcased proficiency in the complete machine learning life-cycle, starting from data cleaning and feature selection, and progressing through model development and deployment using Docker and FastAPI. <br /> - Utilized MLFlow for managing multiple experiment versions, allowing for easy comparisons between different iterations of the machine learning model.`,
     icon: 'tabler:briefcase',
   },
   {
